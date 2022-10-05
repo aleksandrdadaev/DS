@@ -1,0 +1,17 @@
+body {
+  overflow-x: hidden;
+}
+
+.section {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 1280px;
+  height: 100%;
+  border-right: 1px solid #fff;
+  border-left: 1px solid #fff;
+}/*# sourceMappingURL=style.css.map */
