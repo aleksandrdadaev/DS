@@ -1,5 +1,16 @@
+@import 'fonts';
+
+$black: #0b0c10;
+$tiffаny: #45a29e;
+
+$Rimma-sans_bold: 'Rimma-sans_bold', Arial, sans-serif;
+$Tektur_regular: 'Tektur_regular', Arial, sans-serif;
+$Tektur_medium: 'Tektur_medium', Arial, sans-serif;
+$Tektur_semi-bold: 'Tektur_semi-bold', Arial, sans-serif;
+
 body {
 	overflow-x: hidden;
+	background-color: $black;
 }
 
 .section {
@@ -7,6 +18,10 @@ body {
 	height: 100vh;
 	display: flex;
 	justify-content: center;
+
+	&:nth-child(even) {
+		background-color: $tiffаny;
+	}
 }
 
 .container {
