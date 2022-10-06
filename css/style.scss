@@ -1,6 +1,7 @@
 @import 'fonts';
 
 $color-black: #0b0c10;
+$color-gray: #c5c6c7;
 $color-tiffаny: #45a29e;
 $color-electric: #66fcf1;
 
@@ -31,3 +32,5 @@ body {
 	border-right: 1px solid #fff;
 	border-left: 1px solid #fff;
 }
+
+@import 'main';

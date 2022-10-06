@@ -42,4 +42,127 @@ body {
   height: 100%;
   border-right: 1px solid #fff;
   border-left: 1px solid #fff;
+}
+
+.main {
+  position: relative;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header {
+  padding: 0 40px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.header__logo {
+  width: 50%;
+  font-family: "Rimma-sans_bold", Arial, sans-serif;
+  font-size: 36px;
+  line-height: 43px;
+  color: #45a29e;
+}
+
+.nav {
+  width: 50vw;
+  height: 100px;
+  border-left: 100px solid #0b0c10;
+  border-top: 100px solid #45a29e;
+  padding-left: 40px;
+  background-color: #45a29e;
+}
+
+.header__nav {
+  position: absolute;
+  left: 50%;
+}
+
+.nav__menu {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  gap: 40px;
+}
+
+.nav__link {
+  font-family: "Tektur_semi-bold", Arial, sans-serif;
+  font-size: 36px;
+  line-height: 100px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.main__content {
+  padding: 0 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 150px;
+}
+
+.titles__title {
+  font-family: "Rimma-sans_bold", Arial, sans-serif;
+  font-size: 64px;
+  line-height: 77px;
+  color: #66fcf1;
+}
+
+.titles__subtitle {
+  font-family: "Tektur_regular", Arial, sans-serif;
+  font-size: 48px;
+  line-height: 60px;
+  color: #c5c6c7;
+}
+
+.abilities {
+  display: flex;
+  gap: 40px;
+}
+
+.ability {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.ability__image-wrapper {
+  height: 100px;
+  background-size: cover;
+}
+
+.ability__image-wrapper--design {
+  width: 110px;
+  background-image: url(../img/main/unique-design.svg);
+}
+
+.ability__image-wrapper--development {
+  width: 110px;
+  background-image: url(../img/main/website-development.svg);
+}
+
+.ability__image-wrapper--placement {
+  width: 102px;
+  background-image: url(../img/main/placement-and-configuration.svg);
+}
+
+.ability__description {
+  font-family: "Tektur_medium", Arial, sans-serif;
+  font-size: 24px;
+  line-height: 30px;
+  color: #c5c6c7;
+}
+
+.request-button {
+  font-family: "Tektur_medium", Arial, sans-serif;
+  font-size: 36px;
+  line-height: 45px;
+  text-decoration: none;
+  color: #66fcf1;
+}
+
+.header__request-button {
+  margin-left: 60px;
 }/*# sourceMappingURL=style.css.map */
