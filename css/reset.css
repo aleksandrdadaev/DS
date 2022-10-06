@@ -9,6 +9,12 @@ html {
 	box-sizing: inherit;
 }
 
+*,
+*:hover,
+*:focus {
+	outline: none;
+}
+
 body,
 h1,
 h2,
