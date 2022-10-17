@@ -78,4 +78,8 @@ body {
 .header__nav-link {
   text-decoration: none;
   color: #fff;
+}
+
+.main {
+  padding: 100px 60px;
 }/*# sourceMappingURL=style.css.map */
