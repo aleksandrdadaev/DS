@@ -123,19 +123,19 @@ body {
 .opportunities__img-wrapper_design {
   width: 110px;
   height: 100px;
-  background-image: url(/img/opportunities/unique-design.svg);
+  background-image: url(../img/opportunities/unique-design.svg);
 }
 
 .opportunities__img-wrapper_develop {
   width: 110px;
   height: 100px;
-  background-image: url(/img/opportunities/website-development.svg);
+  background-image: url(../img/opportunities/website-development.svg);
 }
 
 .opportunities__img-wrapper_placement {
   width: 102px;
   height: 100px;
-  background-image: url(/img/opportunities/placement-and-configuration.svg);
+  background-image: url(../img/opportunities/placement-and-configuration.svg);
 }
 
 .main__opportunities {
