@@ -28,8 +28,54 @@ body {
 }
 
 .container {
+  margin: 0 auto;
   width: 1280px;
   height: 100%;
   border-right: 1px solid #fff;
   border-left: 1px solid #fff;
+  padding-bottom: 100px;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100px;
+  padding: 0 40px;
+}
+
+.header__logo {
+  font-family: "Rimma-sans_bold", Arial, sans-serif;
+  font-size: 36px;
+  line-height: 43px;
+  color: #45a29e;
+}
+
+.header__nav {
+  position: absolute;
+  left: 50%;
+  width: 50vw;
+  height: 100%;
+  background-color: #45a29e;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 100px 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 100px 100%);
+  padding-left: 140px;
+}
+
+.header__nav-menu {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.header__nav-elem {
+  font-family: "Tektur_semi-bold", Arial, sans-serif;
+  font-size: 36px;
+  line-height: 45px;
+}
+
+.header__nav-link {
+  text-decoration: none;
+  color: #fff;
 }/*# sourceMappingURL=style.css.map */
