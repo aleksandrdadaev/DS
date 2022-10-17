@@ -138,6 +138,10 @@ body {
   background-image: url(/img/opportunities/placement-and-configuration.svg);
 }
 
+.main__opportunities {
+  margin-bottom: 120px;
+}
+
 .request-button {
   font-family: "Tektur_medium", Arial, sans-serif;
   font-size: 36px;
