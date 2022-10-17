@@ -136,4 +136,17 @@ body {
   width: 102px;
   height: 100px;
   background-image: url(/img/opportunities/placement-and-configuration.svg);
+}
+
+.request-button {
+  font-family: "Tektur_medium", Arial, sans-serif;
+  font-size: 36px;
+  line-height: 45px;
+  color: #66fcf1;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.main__request-button {
+  margin-bottom: 100px;
 }/*# sourceMappingURL=style.css.map */
