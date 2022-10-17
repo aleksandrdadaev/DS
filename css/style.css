@@ -82,4 +82,22 @@ body {
 
 .main {
   padding: 100px 60px;
+}
+
+.headings__title {
+  font-family: "Rimma-sans_bold", Arial, sans-serif;
+  font-size: 64px;
+  line-height: 77px;
+  color: #66fcf1;
+}
+
+.headings__subtitle {
+  font-family: "Tektur_regular", Arial, sans-serif;
+  font-size: 48px;
+  line-height: 60px;
+  color: #c5c6c7;
+}
+
+.main__headings {
+  margin-bottom: 100px;
 }/*# sourceMappingURL=style.css.map */
