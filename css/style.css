@@ -153,4 +153,66 @@ body {
 
 .main__request-button {
   margin-bottom: 100px;
+}
+
+.services {
+  padding-right: 45px;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  color: #fff;
+  font-family: "Tektur_semi-bold", Arial, sans-serif;
+}
+
+.services__title {
+  font-size: 124px;
+  line-height: 155px;
+  -ms-writing-mode: tb-rl;
+      writing-mode: tb-rl;
+  transform: rotate(180deg);
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.services__span {
+  color: #66fcf1;
+}
+
+.services-slider {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.services-slider__wrapper {
+  display: flex;
+  gap: 45px;
+  overflow-x: hidden;
+}
+
+.services-slider__slide {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.services-slider__img {
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+.services-slider__title {
+  font-size: 40px;
+  line-height: 50px;
+  margin-bottom: 40px;
+}
+
+.services-slider__text {
+  font-size: 32px;
+  line-height: 50px;
+  text-align: end;
+}
+
+.main__services {
+  margin-bottom: 100px;
 }/*# sourceMappingURL=style.css.map */
