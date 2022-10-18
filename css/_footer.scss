@@ -42,6 +42,15 @@
 }
 
 .useful-links__link {
+	display: block;
+	width: fit-content;
 	text-decoration: none;
 	color: $color-gray;
+	transition: all 0.8s ease;
+
+	&:hover,
+	&:focus {
+		transform: scale(1.1);
+		color: #fff;
+	}
 }
