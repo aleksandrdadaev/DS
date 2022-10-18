@@ -327,6 +327,9 @@ body {
   border-radius: 5px;
   overflow: hidden;
 }
+.projects-slider__slide:hover .projects-slider__information {
+  right: 0;
+}
 
 .project-slider__img {
   display: block;
@@ -335,10 +338,11 @@ body {
 .projects-slider__information {
   position: absolute;
   top: 0;
-  right: 0;
+  right: -100%;
   width: 40%;
   height: 100%;
   background-color: rgba(11, 12, 16, 0.8);
+  transition: all 0.8s ease;
 }
 
 .projects-slider__nav {
