@@ -5,8 +5,13 @@
 	color: $color-electric;
 	background-color: transparent;
 	cursor: pointer;
+	width: fit-content;
 }
 
 .main__request-button {
 	margin-bottom: 100px;
+}
+
+.request-button_pos-end {
+	align-self: flex-end;
 }

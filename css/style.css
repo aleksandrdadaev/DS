@@ -82,6 +82,8 @@ body {
 
 .main {
   padding: 100px 60px;
+  display: flex;
+  flex-direction: column;
 }
 
 .headings__title {
@@ -149,10 +151,17 @@ body {
   color: #66fcf1;
   background-color: transparent;
   cursor: pointer;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .main__request-button {
   margin-bottom: 100px;
+}
+
+.request-button_pos-end {
+  align-self: flex-end;
 }
 
 .services {
