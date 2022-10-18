@@ -1,0 +1,56 @@
+.footer {
+	padding: 0 60px;
+}
+
+.about-us {
+	margin-bottom: 30px;
+	color: #fff;
+}
+
+.about-us__title {
+	margin-bottom: 30px;
+	font-family: $Rimma-sans_bold;
+	font-size: 36px;
+	line-height: 43px;
+}
+
+.about-us__text {
+	font-family: $Tektur_regular;
+	font-size: 24px;
+	line-height: 30px;
+}
+
+.useful-links {
+	display: flex;
+	gap: 80px;
+}
+
+.useful-links__category {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	font-family: $Tektur_medium;
+	font-size: 36px;
+	line-height: 45px;
+	color: #fff;
+}
+
+.useful-links__links {
+	font-family: $Tektur_regular;
+	font-size: 24px;
+	line-height: 40px;
+}
+
+.useful-links__link {
+	display: block;
+	width: fit-content;
+	text-decoration: none;
+	color: $color-gray;
+	transition: all 0.8s ease;
+
+	&:hover,
+	&:focus {
+		transform: scale(1.1);
+		color: #fff;
+	}
+}

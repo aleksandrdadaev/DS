@@ -39,4 +39,10 @@
 .header__nav-link {
 	text-decoration: none;
 	color: #fff;
+	transition: all 0.8s ease;
+
+	&:hover,
+	&:focus {
+		color: $color-black;
+	}
 }

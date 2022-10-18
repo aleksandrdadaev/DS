@@ -10,6 +10,10 @@ $Tektur_regular: 'Tektur_regular', Arial, sans-serif;
 $Tektur_medium: 'Tektur_medium', Arial, sans-serif;
 $Tektur_semi-bold: 'Tektur_semi-bold', Arial, sans-serif;
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	overflow-x: hidden;
 	background-color: $color-black;
@@ -31,3 +35,4 @@ body {
 @import 'request-button';
 @import 'services';
 @import 'projects';
+@import 'footer';
