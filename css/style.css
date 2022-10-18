@@ -257,6 +257,7 @@ body {
 }
 
 .services-slider {
+  overflow-x: hidden;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -265,7 +266,7 @@ body {
 .services-slider__wrapper {
   display: flex;
   gap: 45px;
-  overflow-x: hidden;
+  transition: transform 1s ease;
 }
 
 .services-slider__slide {

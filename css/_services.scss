@@ -20,13 +20,14 @@
 }
 
 .services-slider {
+	overflow-x: hidden;
 	height: fit-content;
 }
 
 .services-slider__wrapper {
 	display: flex;
 	gap: 45px;
-	overflow-x: hidden;
+	transition: transform 1s ease;
 }
 
 .services-slider__slide {
