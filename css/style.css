@@ -82,6 +82,10 @@ body {
 .header__nav-link {
   text-decoration: none;
   color: #fff;
+  transition: all 0.8s ease;
+}
+.header__nav-link:hover, .header__nav-link:focus {
+  color: #0b0c10;
 }
 
 .main {
