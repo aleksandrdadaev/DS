@@ -310,6 +310,7 @@ body {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  overflow: hidden;
 }
 
 .projects-slider__wrapper {
@@ -317,8 +318,8 @@ body {
   border-radius: 5px;
   display: flex;
   gap: 60px;
-  overflow: hidden;
   margin-bottom: 40px;
+  transition: transform 1s ease;
 }
 
 .projects-slider__slide {
