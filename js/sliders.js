@@ -1,47 +1,117 @@
-function slider(Slider) {
-	const slider = Slider;
+function slider(id, infinity = true, autoplay = true, indicators = true) {
+	const slider = document.querySelector(`#${id}`);
 	const sliderWrapper = slider.firstElementChild;
 	const sliderElements = Array.from(sliderWrapper.children);
 	const sliderLength = sliderElements.length;
 	let gapBetweenSlides = +getComputedStyle(sliderWrapper).gap.slice(0, -2);
 	let slideWidth = +getComputedStyle(sliderElements[0]).width.slice(0, -2);
+	let sliderWidth = (slideWidth + gapBetweenSlides) * sliderLength;
 	let transformSlider = 0;
 	let activeIndex = 0;
+	let direction = true;
 	let x1 = null;
-	let autoplay;
-	let autoplayDirection = true;
-	if (document.documentElement.clientWidth >= 1280) {
-		autoplay = true;
-	} else {
-		autoplay = false;
+
+	if (infinity) {
+		direction = false;
+		//	Перебираем массив и задаем дата-атрибуты
+		sliderElements.forEach((item, index) => {
+			item.dataset.index = index;
+			item.dataset.order = index;
+			item.dataset.translate = 0;
+		});
+
+		changeOrder();
+		changeTranslate();
+		moveSlides();
 	}
 
-	function moveRight() {
-		if (activeIndex == sliderLength - 1) {
-			// autoplayDirection = false;
-			return;
-		}
-		transformSlider -= slideWidth + gapBetweenSlides;
+	function moveSlider() {
 		sliderWrapper.style.transform = `translateX(${transformSlider}px)`;
-		activeIndex += 1;
-		if (activeIndex == sliderLength - 1) {
-			autoplayDirection = false;
+	}
+
+	function moveSlides() {
+		sliderElements.forEach(item => {
+			item.style.transform = `translateX(${item.dataset.translate}px)`;
+		});
+	}
+
+	// 	Изменяем ордеры, исходя из активного элемента
+	function changeOrder() {
+		let newArray = sliderElements.map(item => +item.dataset.order);
+		if (direction) {
+			let elem = sliderElements.find(
+				item => item.dataset.order == Math.min(...newArray)
+			);
+			elem.dataset.order = +elem.dataset.order + sliderLength;
+		}
+		if (!direction) {
+			let elem = sliderElements.find(
+				item => item.dataset.order == Math.max(...newArray)
+			);
+			elem.dataset.order = +elem.dataset.order - sliderLength;
 		}
 	}
 
+	//	Изменяем translate у слайдов
+	function changeTranslate() {
+		sliderElements.forEach(item => {
+			item.dataset.translate =
+				Math.floor(+item.dataset.order / sliderLength) * sliderWidth;
+		});
+	}
+
+	function changeActivity() {
+		let nextActiveIndex = 0;
+		if (direction) {
+			nextActiveIndex = activeIndex + 1;
+			if (activeIndex == sliderLength - 1) {
+				nextActiveIndex -= sliderLength;
+			}
+		} else {
+			nextActiveIndex = activeIndex - 1;
+			if (activeIndex == 0) {
+				nextActiveIndex += sliderLength;
+			}
+		}
+		activeIndex = nextActiveIndex;
+	}
+
+	//	Движение влево
 	function moveLeft() {
-		if (activeIndex == 0) {
-			// autoplayDirection = true;
-			return;
+		direction = false;
+		if (!infinity) {
+			if (!direction && activeIndex == 0) {
+				return;
+			}
+		}
+		changeActivity();
+		if (infinity) {
+			changeOrder();
+			changeTranslate();
+
+			setTimeout(moveSlides, 200);
 		}
 		transformSlider += slideWidth + gapBetweenSlides;
-		sliderWrapper.style.transform = `translateX(${transformSlider}px)`;
-		activeIndex -= 1;
-		if (activeIndex == 0) {
-			autoplayDirection = true;
-		}
+		moveSlider();
 	}
-	//
+	//	Движение вправо
+	function moveRight() {
+		direction = true;
+		if (!infinity) {
+			if (direction && activeIndex == sliderLength - 1) {
+				return;
+			}
+		}
+		changeActivity();
+		if (infinity) {
+			changeOrder();
+			changeTranslate();
+
+			setTimeout(moveSlides, 200);
+		}
+		transformSlider -= slideWidth + gapBetweenSlides;
+		moveSlider();
+	}
 
 	sliderWrapper.addEventListener('touchstart', handleTouchStart, false);
 	sliderWrapper.addEventListener('touchmove', handleTouchMove, false);
@@ -64,29 +134,7 @@ function slider(Slider) {
 		}
 		x1 = null;
 	}
-
-	setInterval(() => {
-		if (autoplay) {
-			if (autoplayDirection) {
-				moveRight();
-			} else {
-				moveLeft();
-			}
-		}
-	}, 5000);
-
-	sliderWrapper.addEventListener('mouseover', () => {
-		if (autoplay) {
-			autoplay = false;
-		}
-	});
-
-	sliderWrapper.addEventListener('mouseout', () => {
-		if (!autoplay) {
-			autoplay = true;
-		}
-	});
 }
 
-slider(document.querySelector('#services-slider'));
-slider(document.querySelector('#projects-slider'));
+slider('projects-slider');
+slider('services-slider', false);
