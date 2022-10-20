@@ -10,6 +10,7 @@ function slider(id, infinity = true, autoplay = true, indicators = true) {
 	let activeIndex = 0;
 	let direction = true;
 	let x1 = null;
+	let divIndicators = null;
 
 	if (infinity) {
 		direction = false;
@@ -23,6 +24,55 @@ function slider(id, infinity = true, autoplay = true, indicators = true) {
 		changeOrder();
 		changeTranslate();
 		moveSlides();
+	}
+
+	if (autoplay) {
+		let autoplayEnable = true;
+		let autoplayDirection = true;
+
+		function Autoplay() {
+			if (!infinity) {
+				if (activeIndex == 0) {
+					autoplayDirection = true;
+				}
+				if (activeIndex == sliderLength - 1) {
+					autoplayDirection = false;
+				}
+			}
+
+			if (autoplayEnable) {
+				if (autoplayDirection) {
+					moveRight();
+				} else {
+					moveLeft();
+				}
+			}
+		}
+
+		sliderWrapper.addEventListener('mouseover', () => {
+			autoplayEnable = false;
+		});
+		sliderWrapper.addEventListener('mouseout', () => {
+			autoplayEnable = true;
+		});
+		setInterval(Autoplay, 5000);
+	}
+
+	if (indicators) {
+		divIndicators = document.createElement('div');
+		divIndicators.className = 'projects-slider__nav';
+
+		for (let i = 0; i < sliderLength; i++) {
+			let indicator = document.createElement('span');
+			indicator.className = 'projects-slider__nav-button';
+			indicator.dataset.index = i;
+			divIndicators.append(indicator);
+		}
+		slider.append(divIndicators);
+		divIndicators = Array.from(divIndicators.children);
+		divIndicators[activeIndex].classList.add(
+			'projects-slider__nav-button_active'
+		);
 	}
 
 	function moveSlider() {
@@ -62,6 +112,11 @@ function slider(id, infinity = true, autoplay = true, indicators = true) {
 
 	function changeActivity() {
 		let nextActiveIndex = 0;
+		if (indicators) {
+			divIndicators[activeIndex].classList.remove(
+				'projects-slider__nav-button_active'
+			);
+		}
 		if (direction) {
 			nextActiveIndex = activeIndex + 1;
 			if (activeIndex == sliderLength - 1) {
@@ -74,6 +129,11 @@ function slider(id, infinity = true, autoplay = true, indicators = true) {
 			}
 		}
 		activeIndex = nextActiveIndex;
+		if (indicators) {
+			divIndicators[activeIndex].classList.add(
+				'projects-slider__nav-button_active'
+			);
+		}
 	}
 
 	//	Движение влево
@@ -136,5 +196,5 @@ function slider(id, infinity = true, autoplay = true, indicators = true) {
 	}
 }
 
+slider('services-slider', false, true, false);
 slider('projects-slider');
-slider('services-slider', false);
