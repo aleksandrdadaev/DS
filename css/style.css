@@ -311,11 +311,11 @@ body {
   height: -moz-fit-content;
   height: fit-content;
   overflow: hidden;
+  border-radius: 5px;
 }
 
 .projects-slider__wrapper {
   width: 100%;
-  border-radius: 5px;
   display: flex;
   gap: 60px;
   margin-bottom: 40px;
@@ -358,6 +358,7 @@ body {
   height: 10px;
   border-radius: 5px;
   background-color: #c5c6c7;
+  transition: all 0.5s ease;
 }
 
 .projects-slider__nav-button_active {
