@@ -21,7 +21,7 @@
 							<a href="#cases" class="header__nav-link">Кейсы</a>
 						</li>
 						<li class="header__nav-elem">
-							<a href="/" class="header__nav-link">Заявка</a>
+							<a href="/" class="header__nav-link" id="open-request">Заявка</a>
 						</li>
 					</ul>
 				</nav>
@@ -49,7 +49,7 @@
 						</p>
 					</div>
 				</div>
-				<button class="request-button main__request-button">
+				<button class="request-button main__request-button" id="open-request">
 					<span></span>
 					<span></span>
 					<span></span>
@@ -129,7 +129,7 @@
 						</div>
 					</div>
 				</section>
-				<button class="request-button request-button_pos-end">
+				<button class="request-button request-button_pos-end" id="open-request">
 					<span></span>
 					<span></span>
 					<span></span>
@@ -218,9 +218,9 @@
 				</ul>
 			</footer>
 		</div>
-		<div class="request-bg">
+		<div class="request-bg" id="request">
 			<form action="" class="request">
-				<button class="request__close"></button>
+				<button class="request__close" id="request-close"></button>
 				<p class="request__text">
 					<span class="request__span">Наш</span> сотрудник свяжется с вами и
 					ответит на все <span class="request__span">ваши</span> вопросы
@@ -283,5 +283,6 @@
 			</form>
 		</div>
 		<script src="js/sliders.js"></script>
+		<script src="js/request.js"></script>
 	</body>
 </html>
