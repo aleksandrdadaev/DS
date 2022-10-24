@@ -226,10 +226,21 @@
 					ответит на все <span class="request__span">ваши</span> вопросы
 				</p>
 				<div class="request__inputs">
-					<input type="text" class="request__input" />
-					<input type="email" class="request__input" />
-					<input type="tel" class="request__input" />
-					<textarea class="request__input request__textarea"></textarea>
+					<input type="text" class="request__input" placeholder="ФИО" />
+					<input
+						type="email"
+						class="request__input request__input_half"
+						placeholder="Email"
+					/>
+					<input
+						type="tel"
+						class="request__input request__input_half"
+						placeholder="Телефон"
+					/>
+					<textarea
+						class="request__input request__textarea"
+						placeholder="Комментарий к заявке"
+					></textarea>
 				</div>
 				<div class="request__communication">
 					<p class="request__communication-text">
@@ -242,9 +253,9 @@
 								name="Communication"
 								class="request__communication-input"
 							/>
-							<span
+							<div
 								class="request__communication-img-wrapper request__communication-img-wrapper_whatsapp"
-							></span>
+							></div>
 						</label>
 						<label>
 							<input
@@ -252,9 +263,9 @@
 								name="Communication"
 								class="request__communication-input"
 							/>
-							<span
+							<div
 								class="request__communication-img-wrapper request__communication-img-wrapper_telegram"
-							></span>
+							></div>
 						</label>
 						<label>
 							<input
@@ -262,9 +273,9 @@
 								name="Communication"
 								class="request__communication-input"
 							/>
-							<span
+							<div
 								class="request__communication-img-wrapper request__communication-img-wrapper_email"
-							></span>
+							></div>
 						</label>
 					</div>
 				</div>
