@@ -21,7 +21,7 @@
 							<a href="#cases" class="header__nav-link">Кейсы</a>
 						</li>
 						<li class="header__nav-elem">
-							<a href="/" class="header__nav-link">Заявка</a>
+							<a href="/" class="header__nav-link" id="open-request">Заявка</a>
 						</li>
 					</ul>
 				</nav>
@@ -49,7 +49,7 @@
 						</p>
 					</div>
 				</div>
-				<button class="request-button main__request-button">
+				<button class="request-button main__request-button" id="open-request">
 					<span></span>
 					<span></span>
 					<span></span>
@@ -127,16 +127,9 @@
 								<div class="projects-slider__information"></div>
 							</div>
 						</div>
-						<!-- <div class="projects-slider__nav">
-							<button class="projects-slider__nav-button"></button>
-							<button
-								class="projects-slider__nav-button projects-slider__nav-button_active"
-							></button>
-							<button class="projects-slider__nav-button"></button>
-						</div> -->
 					</div>
 				</section>
-				<button class="request-button request-button_pos-end">
+				<button class="request-button request-button_pos-end" id="open-request">
 					<span></span>
 					<span></span>
 					<span></span>
@@ -225,6 +218,71 @@
 				</ul>
 			</footer>
 		</div>
+		<div class="request-bg" id="request">
+			<form action="" class="request">
+				<button class="request__close" id="request-close"></button>
+				<p class="request__text">
+					<span class="request__span">Наш</span> сотрудник свяжется с вами и
+					ответит на все <span class="request__span">ваши</span> вопросы
+				</p>
+				<div class="request__inputs">
+					<input type="text" class="request__input" placeholder="ФИО" />
+					<input
+						type="email"
+						class="request__input request__input_half"
+						placeholder="Email"
+					/>
+					<input
+						type="tel"
+						class="request__input request__input_half"
+						placeholder="Телефон"
+					/>
+					<textarea
+						class="request__input request__textarea"
+						placeholder="Комментарий к заявке"
+					></textarea>
+				</div>
+				<div class="request__communication">
+					<p class="request__communication-text">
+						Выберите удобный<br />способ связи
+					</p>
+					<div class="request__communication-inputs">
+						<label>
+							<input
+								type="radio"
+								name="Communication"
+								class="request__communication-input"
+							/>
+							<div
+								class="request__communication-img-wrapper request__communication-img-wrapper_whatsapp"
+							></div>
+						</label>
+						<label>
+							<input
+								type="radio"
+								name="Communication"
+								class="request__communication-input"
+							/>
+							<div
+								class="request__communication-img-wrapper request__communication-img-wrapper_telegram"
+							></div>
+						</label>
+						<label>
+							<input
+								type="radio"
+								name="Communication"
+								class="request__communication-input"
+							/>
+							<div
+								class="request__communication-img-wrapper request__communication-img-wrapper_email"
+							></div>
+						</label>
+					</div>
+				</div>
+				<input type="submit" class="request__submit" value="Оставить заявку" />
+			</form>
+		</div>
 		<script src="js/sliders.js"></script>
+		<script src="js/request.js"></script>
 	</body>
 </html>
