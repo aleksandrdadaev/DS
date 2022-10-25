@@ -70,6 +70,8 @@
 	font-size: 36px;
 	line-height: 45px;
 	color: $color-black;
+	outline: 2px solid transparent;
+	transition: outline-color 0.3s ease;
 }
 
 .request__input_half {
@@ -78,6 +80,10 @@
 
 .request__input::placeholder {
 	color: $color-black;
+}
+
+.request__input:focus {
+	outline-color: $color-black;
 }
 
 .request__textarea {
@@ -152,7 +158,8 @@
 	cursor: pointer;
 	transition: all 0.5s ease;
 
-	&:hover {
+	&:hover,
+	&:focus {
 		color: $color-electric;
 	}
 }

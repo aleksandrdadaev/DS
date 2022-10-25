@@ -499,6 +499,8 @@ body {
   font-size: 36px;
   line-height: 45px;
   color: #0b0c10;
+  outline: 2px solid transparent;
+  transition: outline-color 0.3s ease;
 }
 
 .request__input_half {
@@ -515,6 +517,10 @@ body {
 
 .request__input::placeholder {
   color: #0b0c10;
+}
+
+.request__input:focus {
+  outline-color: #0b0c10;
 }
 
 .request__textarea {
@@ -588,6 +594,6 @@ body {
   cursor: pointer;
   transition: all 0.5s ease;
 }
-.request__submit:hover {
+.request__submit:hover, .request__submit:focus {
   color: #66fcf1;
 }/*# sourceMappingURL=style.css.map */

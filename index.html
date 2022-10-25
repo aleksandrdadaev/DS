@@ -219,27 +219,38 @@
 			</footer>
 		</div>
 		<div class="request-bg" id="request">
-			<form action="" class="request">
+			<form action="/" class="request" id="request-form" name="request">
 				<button class="request__close" id="request-close"></button>
 				<p class="request__text">
 					<span class="request__span">Наш</span> сотрудник свяжется с вами и
 					ответит на все <span class="request__span">ваши</span> вопросы
 				</p>
 				<div class="request__inputs">
-					<input type="text" class="request__input" placeholder="ФИО" />
+					<input
+						type="text"
+						class="request__input"
+						placeholder="ФИО"
+						name="name"
+						data-reg="^[а-яА-ЯёЁ]+ [а-яА-ЯёЁ]+ [а-яА-ЯёЁ]+$"
+					/>
 					<input
 						type="email"
 						class="request__input request__input_half"
 						placeholder="Email"
+						name="email"
+						data-reg="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,6}$"
 					/>
 					<input
 						type="tel"
 						class="request__input request__input_half"
 						placeholder="Телефон"
+						name="phone"
+						data-reg="^((\+7|7|8)+([0-9]){10})$"
 					/>
 					<textarea
 						class="request__input request__textarea"
 						placeholder="Комментарий к заявке"
+						name="message"
 					></textarea>
 				</div>
 				<div class="request__communication">
@@ -250,7 +261,8 @@
 						<label>
 							<input
 								type="radio"
-								name="Communication"
+								name="communication"
+								value="whatsapp"
 								class="request__communication-input"
 							/>
 							<div
@@ -260,7 +272,8 @@
 						<label>
 							<input
 								type="radio"
-								name="Communication"
+								name="communication"
+								value="telegram"
 								class="request__communication-input"
 							/>
 							<div
@@ -270,7 +283,8 @@
 						<label>
 							<input
 								type="radio"
-								name="Communication"
+								name="communication"
+								value="email"
 								class="request__communication-input"
 							/>
 							<div
@@ -279,10 +293,16 @@
 						</label>
 					</div>
 				</div>
-				<input type="submit" class="request__submit" value="Оставить заявку" />
+				<input
+					type="submit"
+					class="request__submit"
+					value="Оставить заявку"
+					name="button"
+				/>
 			</form>
 		</div>
 		<script src="js/sliders.js"></script>
-		<script src="js/request.js"></script>
+		<script src="js/open-request.js"></script>
+		<script src="js/valid-request.js"></script>
 	</body>
 </html>
