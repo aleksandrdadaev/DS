@@ -11,7 +11,16 @@ $phone = $_POST['phone'];
 $message = $_POST['message'];
 $communication = $_POST['communication'];
 
-$body = $client . ' ' . $email . ' ' . $phone . ' ' . $message . ' ' . $communication;
+$email_template = 'template-mail.html';
+
+$body = file_get_contents($email_template);
+
+$body = str_replace('%name%', $client, $body);
+$body = str_replace('%email%', $email, $body);
+$body = str_replace('%phone%', $phone, $body);
+$body = str_replace('%communication%', $communication, $body);
+$body = str_replace('%message%', $message, $body);
+
 $theme = 'Заявка с формы';
 
 $mail = new PHPMailer\PHPMailer\PHPMailer();
@@ -39,11 +48,16 @@ $mail->addAddress('sasha.dadaev.98@mail.ru');
 // Отправка сообщения
 $mail->isHTML(true);
 $mail->Subject = $theme;
-$mail->Body = $body;
+$mail->msgHTML($body);
 
 // Проверяем отравленность сообщения
-if ($mail->send()) {
-	$result = "success";
+if (!$mail->send()) {
+	$Message = 'Сообщение не отправлено!';
 } else {
-	$result = "error";
+	$Message = 'Данные отправлены.';
 }
+
+$response = ['message' => $Message];
+header('Content-type: application/json');
+
+echo json_encode($response);
