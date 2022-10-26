@@ -7,7 +7,7 @@ const validInputArr = Array.from(form).filter(input => {
 	}
 });
 
-button.addEventListener('click', buttonHandler);
+form.addEventListener('submit', formCheck);
 
 form.addEventListener('input', inputHandler);
 
@@ -26,16 +26,50 @@ function inputCheck(input) {
 	input.dataset.valid = inputReg.test(inputValue) ? 1 : 0;
 }
 
-function buttonHandler(e) {
+function formCheck(e) {
+	e.preventDefault();
 	const isAllValid = [];
 	validInputArr.forEach(input => {
 		isAllValid.push(input.dataset.valid);
 	});
-	const isValid = isAllValid.includes('0');
 
-	if (isValid) {
-		e.preventDefault();
+	if (isAllValid.includes('0')) {
 		validInputArr.find(input => input.dataset.valid == '0').style.outlineColor =
 			'rgb(255,0,0)';
+		return;
 	}
+
+	formSubmit();
+}
+
+async function formSubmit() {
+	const data = serializeForm(form);
+	const response = await sendData(data);
+	if (response.ok) {
+		let result = await response.json();
+		alert(result.message);
+		formReset();
+		closeRequest();
+	} else {
+		alert('Код ошибки: ' + response.status);
+	}
+}
+
+function serializeForm(formNode) {
+	return new FormData(formNode);
+}
+
+async function sendData(data) {
+	return await fetch('../send-mail.php', {
+		method: 'POST',
+		body: data,
+	});
+}
+
+function formReset() {
+	form.reset();
+	validInputArr.forEach(input => {
+		input.dataset.valid = 0;
+		input.style.outlineColor = 'transparent';
+	});
 }
