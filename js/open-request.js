@@ -27,8 +27,4 @@ function closeRequest() {
 	requestBg.classList.remove('request-bg_active');
 	request.classList.remove('request_active');
 	document.body.style.overflowY = '';
-	validInputArr.forEach(input => {
-		input.style.outlineColor = 'transparent';
-		input.value = '';
-	});
 }
