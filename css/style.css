@@ -431,7 +431,7 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(11, 12, 16, 0.5);
+  background-color: rgba(11, 12, 16, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -449,6 +449,7 @@ body {
   width: 730px;
   padding: 20px 40px 40px;
   background-color: #45a29e;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   transform: scale(0);
@@ -523,6 +524,9 @@ body {
 
 .request__textarea {
   resize: none;
+}
+.request__textarea::-webkit-scrollbar {
+  width: 0;
 }
 
 .request__communication {
