@@ -4,7 +4,7 @@
 	left: 0;
 	width: 100vw;
 	height: 100vh;
-	background-color: rgba($color: $color-black, $alpha: 0.5);
+	background-color: rgba($color: $color-black, $alpha: 0.8);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -22,6 +22,7 @@
 	width: 730px;
 	padding: 20px 40px 40px;
 	background-color: $color-tiffаny;
+	border-radius: 5px;
 	display: flex;
 	flex-direction: column;
 	transform: scale(0);
@@ -88,6 +89,10 @@
 
 .request__textarea {
 	resize: none;
+
+	&::-webkit-scrollbar {
+		width: 0;
+	}
 }
 
 .request__communication {
