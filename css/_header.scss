@@ -1,9 +1,18 @@
 .header {
-	position: relative;
+	position: fixed;
+	top: -100px;
+	z-index: 1;
+	width: 1280px;
+	background-color: $color-black;
 	display: flex;
 	align-items: center;
 	height: 100px;
 	padding: 0 40px;
+	transition: top 0.3s ease;
+}
+
+.header_active {
+	top: 0;
 }
 
 .header__logo {

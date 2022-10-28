@@ -30,20 +30,34 @@ body {
   overflow-x: hidden;
   background-color: #0b0c10;
 }
+body::-webkit-scrollbar {
+  width: 0;
+}
 
 .container {
+  padding-top: 100px;
   margin: 0 auto;
   width: 1280px;
   height: 100%;
   padding-bottom: 100px;
+  transition: padding-top 0.3s ease;
 }
 
 .header {
-  position: relative;
+  position: fixed;
+  top: -100px;
+  z-index: 1;
+  width: 1280px;
+  background-color: #0b0c10;
   display: flex;
   align-items: center;
   height: 100px;
   padding: 0 40px;
+  transition: top 0.3s ease;
+}
+
+.header_active {
+  top: 0;
 }
 
 .header__logo {
