@@ -24,7 +24,15 @@ document.addEventListener('click', e => {
 });
 
 function closeRequest() {
-	requestBg.classList.remove('request-bg_active');
+	closeForm();
+	closeFormBg();
+}
+
+function closeForm() {
 	request.classList.remove('request_active');
+}
+
+function closeFormBg() {
+	requestBg.classList.remove('request-bg_active');
 	document.body.style.overflowY = '';
 }

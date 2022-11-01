@@ -47,11 +47,33 @@ async function formSubmit() {
 	const response = await sendData(data);
 	if (response.ok) {
 		let result = await response.json();
-		alert(result.message);
 		formReset();
-		closeRequest();
+		closeForm();
+		let formSend = document.createElement('div');
+		let formSendImg = document.createElement('div');
+		let formSendMessage = document.createElement('p');
+		formSend.className = 'request-info-send';
+		formSendImg.className = 'request-info-send__img';
+		formSendMessage.className = 'request-info-send__message';
+		formSend.append(formSendImg);
+		formSend.append(formSendMessage);
+
+		if (result.message) {
+			formSendImg.style.backgroundImage =
+				'url(../img/request/request-accept.svg)';
+			formSendMessage.textContent = 'Заявка отправлена';
+		} else {
+			formSendImg.style.backgroundImage =
+				'url(../img/request/request-error.svg)';
+			formSendMessage.textContent = 'Ошибка :(';
+		}
+		requestBg.append(formSend);
+		setTimeout(() => {
+			closeFormBg();
+			formSend.remove();
+		}, 2000);
 	} else {
-		alert('Код ошибки: ' + response.status);
+		console.log('Код ошибки: ' + response.status);
 	}
 }
 

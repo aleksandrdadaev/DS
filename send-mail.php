@@ -52,9 +52,9 @@ $mail->msgHTML($body);
 
 // Проверяем отравленность сообщения
 if (!$mail->send()) {
-	$Message = 'Сообщение не отправлено!';
+	$Message = false;
 } else {
-	$Message = 'Данные отправлены.';
+	$Message = true;
 }
 
 $response = ['message' => $Message];

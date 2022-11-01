@@ -443,6 +443,7 @@ body::-webkit-scrollbar {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 1;
   width: 100vw;
   height: 100vh;
   background-color: rgba(11, 12, 16, 0.8);
@@ -612,4 +613,52 @@ body::-webkit-scrollbar {
 }
 .request__submit:hover, .request__submit:focus {
   color: #66fcf1;
+}
+
+.request-info-send {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  opacity: 0;
+  -webkit-animation: 1s show ease;
+          animation: 1s show ease;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.request-info-send__img {
+  width: 250px;
+  height: 250px;
+}
+
+.request-info-send__message {
+  font-family: "Tektur_medium", Arial, sans-serif;
+  font-size: 48px;
+  line-height: 60px;
+  color: #fff;
+}
+
+@-webkit-keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }/*# sourceMappingURL=style.css.map */
