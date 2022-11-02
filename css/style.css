@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Rimma-sans_bold";
   src: url(../fonts/rimma-sans/Rimma-sans_bold.woff2) format("woff2"), url(../fonts/rimma-sans/Rimma-sans_bold.woff) format("woff"), url(../fonts/rimma-sans/Rimma-sans_bold.ttf) format("truetype"), url(../fonts/rimma-sans/Rimma-sans_bold.eot) format("embedded-opentype");
@@ -130,6 +131,7 @@ body::-webkit-scrollbar {
 }
 
 .opportunities__elem {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -145,7 +147,7 @@ body::-webkit-scrollbar {
 .opportunities__img-wrapper_design {
   width: 110px;
   height: 100px;
-  background-image: url(../img/opportunities/unique-design.svg);
+  background-image: url(../img/opportunities/design/монитор.svg);
 }
 
 .opportunities__img-wrapper_develop {
@@ -162,6 +164,22 @@ body::-webkit-scrollbar {
 
 .main__opportunities {
   margin-bottom: 95px;
+}
+
+.opportunities__design-wrapper {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 90px;
+  height: 50px;
+  overflow: hidden;
+}
+
+.opportunities__design {
+  transition: transform 2s ease;
+}
+.opportunities__design img {
+  display: block;
 }
 
 .request-button {

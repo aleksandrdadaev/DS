@@ -4,6 +4,7 @@
 }
 
 .opportunities__elem {
+	position: relative;
 	display: flex;
 	align-items: center;
 	gap: 10px;
@@ -19,7 +20,7 @@
 .opportunities__img-wrapper_design {
 	width: 110px;
 	height: 100px;
-	background-image: url(../img/opportunities/unique-design.svg);
+	background-image: url(../img/opportunities/design/монитор.svg);
 }
 
 .opportunities__img-wrapper_develop {
@@ -36,4 +37,21 @@
 
 .main__opportunities {
 	margin-bottom: 95px;
+}
+
+.opportunities__design-wrapper {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 90px;
+	height: 50px;
+	overflow: hidden;
+}
+
+.opportunities__design {
+	transition: transform 2s ease;
+
+	img {
+		display: block;
+	}
 }
