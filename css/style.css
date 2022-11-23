@@ -206,10 +206,11 @@ body::-webkit-scrollbar {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 50px;
+  width: 45px;
   height: 45px;
   background-image: url(../img/opportunities/develop/шестеренка.svg);
   background-repeat: no-repeat;
+  transition: transform 2s ease;
 }
 
 .opportunities__develop-filling {
@@ -228,6 +229,7 @@ body::-webkit-scrollbar {
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-image: url(../img/opportunities/develop/left-arrow.png);
+  transition: transform 0.3s ease;
 }
 
 .opportunities__develop-right-arrow {
@@ -236,6 +238,7 @@ body::-webkit-scrollbar {
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-image: url(../img/opportunities/develop/right-arrow.png);
+  transition: transform 0.3s ease;
 }
 
 .opportunities__develop-slash {
@@ -244,6 +247,7 @@ body::-webkit-scrollbar {
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-image: url(../img/opportunities/develop/slash.png);
+  transition: transform 0.3s ease;
 }
 
 .request-button {
